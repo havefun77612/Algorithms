@@ -1,0 +1,80 @@
+bubble sort :- (O(n^2) ) 
+
+Bubble sort is a simple, inefficient sorting algorithm used to sort lists. It is generally one of the first algorithms taught in computer science courses because it is a good algorithm to learn to build intuition about sorting. While sorting is a simple concept, it is a basic principle used in complex computer programs such as file search, data compression, and path finding. Running time is an important thing to consider when selecting a sorting algorithm since efficiency is often thought of in terms of speed. Bubble sort has an average and worst-case running time of , so in most cases, a faster algorithm is more desirable.
+(The Bubble sort algorithm compares each pair of elements in an array and swaps them if they are out of order until the entire array is sorted. For each element in the list, the algorithm compares every pair of elements.)
+pesudo-code ---> 
+Bubble-sort(a)
+1  for i = a.length() to 1
+2       for j = 1 to i-1
+3                 if a[j]>a[j+1]
+4                          swap(a[j],a[j+1]);
+5                 end if
+
+
+python code 
+{  
+	def bubble_sort(array):
+    	index = len(array) - 1
+   	 while index >= 0:
+        	for j in range(index):
+            	if array[j] > array[j+1]:
+                	array[j], array[j+1] = array[j+1], array[j]
+        	index -= 1
+    	return array
+}
+c++ code 
+{
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+void swap(int &a, int &b);
+
+void bubble(int a[], int lenght);
+
+int main()
+{
+	const int lenght = 10;
+	int a[lenght];
+	cout << "please enter the array values ";
+	for (int i = 0; i < 10; i++) {
+		cout << "enter" << " " << i + 1 << "value";
+		cin >> a[i];
+	}
+	bubble(a,lenght);
+	for (int i = 0; i < 10; i++) {
+		cout<<" "<< a[i];
+	}
+	system("pause");
+    return 0;
+}
+
+void bubble(int a[] , int lenght ) {
+
+	for(int i=0;i<lenght-1;i++)
+		for (int j = 0; j < lenght - i-1; j++)
+		{
+			if (a[j] > a[j + 1]) {
+				swap(a[j], a[j + 1]);
+			}
+		}
+
+}
+
+
+void swap(int &a, int &b)
+{
+	int t = a;
+	a = b;
+	b = t;
+}
+
+
+
+
+
+
+}
+
+
+
+
